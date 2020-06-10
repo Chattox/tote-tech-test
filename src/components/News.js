@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {FlatList, View} from 'react-native';
 
-import {getGBNews} from '../utils/fetchNews';
+import {getNews} from '../utils/fetchNews';
 import Article from './Article';
 import Search from './Search';
 
@@ -18,7 +18,7 @@ class News extends Component {
   fetchNews = () => {
     // Fetch the news from newsAPI which returns articles as a JSON object.
     // Add these articles to the articles prop in state and set loading to false.
-    getGBNews()
+    getNews()
       .then(articles => {
         this.setState({articles, loading: false});
       })
