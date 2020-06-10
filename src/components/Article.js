@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, TouchableHighlight, Linking} from 'react-native';
+import {StyleSheet, View, TouchableHighlight, Linking} from 'react-native';
 import {Text, Card, Divider} from 'react-native-elements';
 import moment from 'moment';
 
@@ -44,42 +44,52 @@ class Article extends Component {
         }}>
         <Card
           featuredTitle={title}
-          featuredTitleStyle={{
-            marginHorizontal: 5,
-            textShadowColor: '#00000f',
-            textShadowOffset: {width: 3, height: 3},
-            textShadowRadius: 3,
-          }}
+          featuredTitleStyle={styles.featuredTitle}
           image={{uri: urlToImage}}>
-          <Text style={{marginBottom: 10}}>
+          <Text style={styles.descriptionText}>
             {description || 'Read more...'}
           </Text>
-          <Divider style={{backgroundColor: '#dfe6e9'}} />
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text
-              style={{
-                margin: 5,
-                fontStyle: 'italic',
-                color: '#b2bec3',
-                fontSize: 10,
-              }}>
-              {source.name.toUpperCase()}
-            </Text>
+          <Divider style={styles.divider} />
+          <View style={styles.bottomText}>
+            <Text style={styles.sourceText}>{source.name.toUpperCase()}</Text>
 
-            <Text
-              style={{
-                margin: 5,
-                fontStyle: 'italic',
-                color: '#b2bec3',
-                fontSize: 10,
-              }}>
-              {time}
-            </Text>
+            <Text style={styles.timeText}>{time}</Text>
           </View>
         </Card>
       </TouchableHighlight>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  featuredTitle: {
+    marginHorizontal: 5,
+    textShadowColor: '#00000f',
+    textShadowOffset: {width: 3, height: 3},
+    textShadowRadius: 3,
+  },
+  descriptionText: {
+    marginBottom: 10,
+  },
+  divider: {
+    backgroundColor: '#dfe6e9',
+  },
+  bottomText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  sourceText: {
+    margin: 5,
+    fontStyle: 'italic',
+    color: '#b2bec3',
+    fontSize: 10,
+  },
+  timeText: {
+    margin: 5,
+    fontStyle: 'italic',
+    color: '#b2bec3',
+    fontSize: 10,
+  },
+});
 
 export default Article;

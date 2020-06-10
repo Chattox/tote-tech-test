@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
 
 import News from './src/components/News';
 
