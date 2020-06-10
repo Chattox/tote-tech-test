@@ -10,6 +10,6 @@ Default to top stories from the UK.
 
 - ~~Load articles from API and display as cards~~ ✔
 - ~~Accept search term input from user and display matching articles~~ ✔
-- Pagination
+- ~~Pagination~~ ✔
 - Add on press functionality to open original article page
 - Styling
