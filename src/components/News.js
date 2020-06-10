@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 
 import {getGBNews} from '../utils/fetchNews';
 import Article from './Article';
+import Search from './Search';
 
 class News extends Component {
   state = {
@@ -33,14 +34,20 @@ class News extends Component {
 
   render() {
     return (
-      // Return FlatList component which will create a scrollable list of article cards
-      <FlatList
-        data={this.state.articles}
-        renderItem={({item}) => <Article article={item} />}
-        keyExtractor={item => item.url}
-        refreshing={this.state.loading}
-        onRefresh={this.handleRefresh}
-      />
+      <View>
+        <Search />
+        {
+          // Return FlatList component which will create a scrollable list of article cards
+        }
+        <FlatList
+          data={this.state.articles}
+          renderItem={({item}) => <Article article={item} />}
+          keyExtractor={item => item.url}
+          refreshing={this.state.loading}
+          onRefresh={this.handleRefresh}
+          style={{backgroundColor: '#3c4042'}}
+        />
+      </View>
     );
   }
 }
