@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "begin": "(npm install && npx react-native start) & npx react-native run-android"
   },
   "dependencies": {
     "axios": "^0.19.2",
