@@ -62,6 +62,7 @@ class News extends Component {
       <View>
         {
           // Return FlatList component which will create a scrollable list of article cards
+          // Search bar in the header, 'load more' button in the footer
         }
         <FlatList
           ListHeaderComponent={<Search doSearch={this.doSearch} />}

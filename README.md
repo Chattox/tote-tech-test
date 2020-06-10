@@ -12,4 +12,4 @@ Default to top stories from the UK.
 - ~~Accept search term input from user and display matching articles~~ ✔
 - ~~Pagination~~ ✔
 - ~~Add on press functionality to open original article page~~ ✔
-- Styling
+- ~~Styling~~ ✔
