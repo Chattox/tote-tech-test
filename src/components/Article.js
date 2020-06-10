@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, TouchableHighlight} from 'react-native';
+import {View, TouchableHighlight, Linking} from 'react-native';
 import {Text, Card, Divider} from 'react-native-elements';
 import moment from 'moment';
 
@@ -38,7 +38,10 @@ class Article extends Component {
     // Given the correct article object, create and return a card object using the properties provided
 
     return (
-      <TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => {
+          Linking.openURL(url);
+        }}>
         <Card
           featuredTitle={title}
           featuredTitleStyle={{
