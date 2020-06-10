@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FlatList, View} from 'react-native';
+import {StyleSheet, FlatList, View} from 'react-native';
 import {Button} from 'react-native-elements';
 
 import {getNews} from '../utils/fetchNews';
@@ -73,11 +73,17 @@ class News extends Component {
           keyExtractor={item => item.url}
           refreshing={this.state.loading}
           onRefresh={this.handleRefresh}
-          style={{backgroundColor: '#3c4042'}}
+          style={styles.list}
         />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  list: {
+    backgroundColor: '#3c4042',
+  },
+});
 
 export default News;
