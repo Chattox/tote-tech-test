@@ -11,6 +11,7 @@ class Search extends Component {
   };
 
   render() {
+    // doSearch function here is passed down from the News component that uses the Search component, so that the search term can be passed to the News component state
     return (
       <SearchBar
         placeholder="Search"
