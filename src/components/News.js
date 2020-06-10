@@ -8,6 +8,7 @@ import Search from './Search';
 class News extends Component {
   state = {
     articles: [],
+    searchTerm: '',
     loading: true,
   };
 
@@ -15,10 +16,16 @@ class News extends Component {
     this.fetchNews();
   };
 
-  fetchNews = () => {
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.searchTerm !== this.state.searchTerm) {
+      this.fetchNews(this.state.searchTerm);
+    }
+  };
+
+  fetchNews = searchTerm => {
     // Fetch the news from newsAPI which returns articles as a JSON object.
     // Add these articles to the articles prop in state and set loading to false.
-    getNews()
+    getNews(searchTerm)
       .then(articles => {
         this.setState({articles, loading: false});
       })
@@ -32,10 +39,14 @@ class News extends Component {
     this.setState({loading: true}, () => this.fetchNews());
   };
 
+  doSearch = search => {
+    this.setState({searchTerm: search.nativeEvent.text});
+  };
+
   render() {
     return (
       <View>
-        <Search />
+        <Search doSearch={this.doSearch} />
         {
           // Return FlatList component which will create a scrollable list of article cards
         }

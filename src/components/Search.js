@@ -10,16 +10,12 @@ class Search extends Component {
     this.setState({search});
   };
 
-  doSearch = search => {
-    console.log(search.nativeEvent.text);
-  };
-
   render() {
     return (
       <SearchBar
         placeholder="Search"
         onChangeText={this.updateSearch}
-        onSubmitEditing={this.doSearch}
+        onSubmitEditing={this.props.doSearch}
         value={this.state.search}
       />
     );
