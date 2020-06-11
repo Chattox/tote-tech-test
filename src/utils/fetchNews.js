@@ -1,6 +1,9 @@
 import {API_KEY} from '../config/config';
 
 export async function getNews(searchTerm, page) {
+  if (!page) {
+    page = 1;
+  }
   // Default URL to get news from newsAPI if no search term given
   const defaultURL = `https://newsapi.org/v2/top-headlines?country=gb&pageSize=5&page=${page}&apiKey=${API_KEY}`;
   // Fetch all articles from newsAPI and return as JSON object

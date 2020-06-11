@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, FlatList, View} from 'react-native';
+import {StyleSheet, FlatList, View, Text} from 'react-native';
 import {Button} from 'react-native-elements';
 
 import {getNews} from '../utils/fetchNews';
@@ -58,6 +58,16 @@ class News extends Component {
   };
 
   render() {
+    if (this.state.articles.length === 0 && this.state.loading === false) {
+      return (
+        <View>
+          <Search doSearch={this.doSearch} />
+          <Text style={styles.noResults}>
+            Unfortunately, there were no results for this search term
+          </Text>
+        </View>
+      );
+    }
     return (
       <View>
         {
@@ -84,6 +94,10 @@ class News extends Component {
 const styles = StyleSheet.create({
   list: {
     backgroundColor: '#3c4042',
+  },
+  noResults: {
+    textAlign: 'center',
+    paddingTop: 20,
   },
 });
 
