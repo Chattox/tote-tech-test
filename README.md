@@ -1,6 +1,11 @@
 # Usage:
 
-In a terminal aimed at the toteTechTest directory, run `npm run begin`. This will install the necessary dependencies and launch the app in a locally installed android emulator or connected android device.
+In a terminal aimed at the toteTechTest directory, run `npm run begin`. This will install the necessary dependencies and launch the app in a locally installed android emulator or connected android device.  
+Alternatively, run the following:
+
+- In a terminal, run `npm install` to install the necessary dependencies
+- Next, run `npm start` to start the react native server
+- In a separate terminal, if your emulator or device is iOS based, run `npm run ios`. If you are working with Android, run `npm run android` instead.
 
 Once the app has started, it will show top news headlines from sources around the UK. Enter your search term in the search bar at the top and it will return a list of relevant, English language articles from sources around the world. Tap the "load more" button at the bottom to load more relevant articles.
 
