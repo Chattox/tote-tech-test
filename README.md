@@ -1,6 +1,6 @@
 # Usage:
 
-Before running, as this app uses an API key to obtain data from newsAPI, some initial setup is required to maintain key security. In the `./src/config` folder, create a file called `config.js` and add the following line of code:
+Before running, as this app uses an API key to obtain data from newsAPI, some initial setup is required to maintain key security. In the `./src/` folder, create a folder called `config`, and inside that create a file called `config.js`. Then, add the following line of code:
 
 ```js
 export const API_KEY = 'YOUR_API_KEY';
