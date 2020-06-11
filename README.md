@@ -1,6 +1,14 @@
 # Usage:
 
-In a terminal aimed at the toteTechTest directory, run `npm run begin`. This will install the necessary dependencies and launch the app in a locally installed android emulator or connected android device.  
+Before running, as this app uses an API key to obtain data from newsAPI, some initial setup is required to maintain key security. In the `./src/config` folder, create a file called `config.js` and add the following line of code:
+
+```js
+export const API_KEY = 'YOUR_API_KEY';
+```
+
+where 'YOUR_API_KEY' is the API key for newsAPI. I have included mine in the email submitting this tech test.
+
+Next, in a terminal aimed at the toteTechTest directory, run `npm run begin`. This will install the necessary dependencies and launch the app in a locally installed android emulator or connected android device.  
 Alternatively, run the following:
 
 - In a terminal, run `npm install` to install the necessary dependencies
